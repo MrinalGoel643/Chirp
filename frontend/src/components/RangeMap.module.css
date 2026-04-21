@@ -1,0 +1,37 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.label {
+  font-size: 0.72rem;
+  font-weight: 400;
+  color: var(--mauve-400);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.mapContainer {
+  height: 240px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  background: var(--beige-100);
+}
+
+.mapPlaceholder {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  color: var(--mauve-300);
+}
+
+.rangeDesc {
+  font-size: 0.78rem;
+  color: var(--mauve-400);
+  line-height: 1.5;
+  font-style: italic;
+}
