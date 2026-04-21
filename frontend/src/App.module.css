@@ -1,0 +1,220 @@
+.page {
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Decorative background blobs */
+.blob1 {
+  position: fixed;
+  top: -120px;
+  right: -80px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--mauve-100) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.blob2 {
+  position: fixed;
+  bottom: -100px;
+  left: -60px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, var(--beige-200) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+/* Two-column main layout */
+.main {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+  margin-top: 2rem;
+}
+
+/* Panels */
+.leftPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: sticky;
+  top: 2rem;
+}
+
+.rightPanel {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.panelCard {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.panelTitle {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+
+.panelSub {
+  font-size: 0.82rem;
+  color: var(--mauve-400);
+  line-height: 1.6;
+}
+
+.divider {
+  height: 1px;
+  background: var(--beige-200);
+  margin: 0.25rem 0;
+}
+
+/* Identify button (shown below uploader when audio is selected) */
+.identifyBtn {
+  width: 100%;
+  padding: 0.95rem;
+  background: var(--mauve-500);
+  color: var(--beige-50);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius-md);
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 16px rgba(125, 86, 125, 0.3);
+  margin-top: 0.25rem;
+}
+
+.identifyBtn:hover {
+  background: var(--mauve-600);
+  box-shadow: 0 6px 24px rgba(125, 86, 125, 0.4);
+}
+
+/* Loading state */
+.loadingState {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+  color: var(--mauve-400);
+  font-size: 0.82rem;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--mauve-200);
+  border-top-color: var(--mauve-500);
+  border-radius: 50%;
+  animation: spin 0.75s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Placeholder right panel */
+.placeholder {
+  min-height: 420px;
+  background: white;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholderInner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  text-align: center;
+}
+
+.birdIllustration {
+  width: 160px;
+  opacity: 0.7;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-8px); }
+}
+
+.placeholderText {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--mauve-300);
+  line-height: 1.7;
+  font-style: italic;
+}
+
+/* Reset button */
+.resetBtn {
+  background: none;
+  color: var(--mauve-400);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  padding: 0.5rem 0;
+  transition: color 0.2s ease;
+  text-align: left;
+}
+
+.resetBtn:hover {
+  color: var(--mauve-600);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--beige-200);
+}
+
+.footer p {
+  font-size: 0.72rem;
+  color: var(--mauve-300);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .main {
+    grid-template-columns: 1fr;
+  }
+
+  .leftPanel {
+    position: static;
+  }
+}
