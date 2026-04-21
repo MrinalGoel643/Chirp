@@ -1,0 +1,14 @@
+{
+  "best_model": "EfficientNet-B0",
+  "test_accuracy": 0.5745,
+  "test_macro_f1": 0.5624,
+  "classes": [
+    "barswa",
+    "categr",
+    "greegr",
+    "lawgol"
+  ],
+  "num_classes": 4,
+  "audio_duration": 5,
+  "sample_rate": 22050
+}
